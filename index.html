@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Lenoma.ru - вся парфюмерия онлайн - интернет-магазин Москва</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="top-menu top-menu--closed">
+        <div class="top-menu__wrapper">
+          <button class="top-menu__toggle">
+            <svg class="icon-menu icon-menu--burger" version="1.1" xmlns="http://www.w3.org/2000/svg" width="49.945" height="24.007">
+              <path d="M1.137 0C.51 0 0 .428 0 1.01v1.981c0 .558.494 1.01 1.139 1.01H48.81c.628 0 1.138-.428 1.138-1.01V1.01c0-.558-.494-1.01-1.138-1.01H1.137zm0 10.003c-.627 0-1.137.428-1.137 1.01v1.98c0 .557.494 1.01 1.139 1.01H48.81c.628 0 1.138-.428 1.138-1.01v-1.98c0-.558-.494-1.01-1.138-1.01H1.137zm0 10.002C.51 20.005 0 20.434 0 21.016v1.981c0 .557.494 1.01 1.139 1.01H48.81c.628 0 1.138-.428 1.138-1.01v-1.981c0-.558-.494-1.011-1.138-1.011H1.137z" />
+              <path d="M1.137 0C.51 0 0 .428 0 1.01v1.981c0 .558.494 1.01 1.139 1.01H48.81c.628 0 1.138-.428 1.138-1.01V1.01c0-.558-.494-1.01-1.138-1.01H1.137zm0 10.003c-.627 0-1.137.428-1.137 1.01v1.98c0 .557.494 1.01 1.139 1.01H48.81c.628 0 1.138-.428 1.138-1.01v-1.98c0-.558-.494-1.01-1.138-1.01H1.137zm0 10.002C.51 20.005 0 20.434 0 21.016v1.981c0 .557.494 1.01 1.139 1.01H48.81c.628 0 1.138-.428 1.138-1.01v-1.981c0-.558-.494-1.011-1.138-1.011H1.137z" /></svg>
+            <svg class="icon-menu icon-menu--cross" version="1.1" xmlns="http://www.w3.org/2000/svg" width="23.867" height="23.867">
+              <path d="M15.087 11.933l8.56-8.559a.75.75 0 0 0 0-1.061L21.554.22a.747.747 0 0 0-1.06 0l-8.561 8.56L3.373.22a.771.771 0 0 0-1.061 0L.22 2.313a.75.75 0 0 0 0 1.061l8.56 8.559-8.56 8.559a.751.751 0 0 0 0 1.062l2.093 2.094a.744.744 0 0 0 1.06 0l8.561-8.56 8.56 8.56a.746.746 0 0 0 1.06 0l2.093-2.094a.751.751 0 0 0 0-1.062l-8.56-8.559z" /></svg>
+          </button>
+          <input class="top-menu__search" type="search" placeholder="Поиск по каталогу">
+          <button class="top-menu__cart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 82" width="50" height="35">
+              <image width="64" height="82" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MCA5MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjkwIj4KCTxkZWZzPgoJCTxjbGlwUGF0aCBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNwMSI+CgkJCTxwYXRoIGQ9Ik0wIDBMNzAgMEw3MCA5MEwwIDkwWiIgLz4KCQk8L2NsaXBQYXRoPgoJPC9kZWZzPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuc2hwMCB7IGZpbGw6ICMwMDAwMDAgfSAKCTwvc3R5bGU+Cgk8ZyBpZD0iUGFnZSAxIiBjbGlwLXBhdGg9InVybCgjY3AxKSI+CgkJPHBhdGggaWQ9IlBhdGggMSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGFzcz0ic2hwMCIgZD0iTTUwIDE1TDUwIDIwTDY3LjUgMjBDNjguODggMjAgNzAgMjEuMTIgNzAgMjIuNUw3MCA4Ny41QzcwIDg4Ljg4IDY4Ljg4IDkwIDY3LjUgOTBMMi41IDkwQzEuMTIgOTAgMCA4OC44OCAwIDg3LjVMMCAyMi41QzAgMjEuMTIgMS4xMiAyMCAyLjUgMjBMMjAgMjBMMjAgMTVDMjAgNi43MyAyNi43MyAwIDM1IDBDNDMuMjcgMCA1MCA2LjczIDUwIDE1Wk0yNSAyMEw0NSAyMEw0NSAxNUM0NSA5LjQ5IDQwLjUxIDUgMzUgNUMyOS40OSA1IDI1IDkuNDkgMjUgMTVMMjUgMjBaTTUwIDI1TDUwIDMyLjVDNTAgMzMuODggNDguODggMzUgNDcuNSAzNUM0Ni4xMiAzNSA0NSAzMy44OCA0NSAzMi41TDQ1IDI1TDI1IDI1TDI1IDMyLjVDMjUgMzMuODggMjMuODggMzUgMjIuNSAzNUMyMS4xMiAzNSAyMCAzMy44OCAyMCAzMi41TDIwIDI1TDUgMjVMNSA4NUw2NSA4NUw2NSAyNUw1MCAyNVoiIC8+Cgk8L2c+Cjwvc3ZnPg==" />
+            </svg>
+          </button>
+        </div>
+        <nav class="top-menu__nav">
+          <ul class="top-menu__site-items">
+            <li class="top-menu__item">
+              <a href="#">О магазине</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Отзывы</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Новости</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Статьи</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+          <ul class="top-menu__user-items">
+            <li class="top-menu__item">
+              <a href="#">Личный кабинет</a>
+            </li>
+            <li class="top-menu__item">
+              <a href="#">Избранное</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="top-menu__contacts">
+          <a class="top-menu__logo" href="#">
+            <img class="top-menu" src="./img/logo.png" width="150" height="150" alt="logo">
+          </a>
+          <ul class="top-menu__list">
+            <li>
+              <a href="tel:74955420595">+7 /495/ 542-05-95</a></li>
+            <li>
+              <a href="#">
+                <svg viewBox="0 0 108.27 108.27" xml:space="preserve" width="10" height="10">
+                  <g>
+                    <path d="M51.954,66.588c-9.284-7.634-15.483-17.054-18.742-22.414l-2.431-4.583c0.85-0.912,7.332-7.853,10.141-11.619
+		c3.53-4.729-1.588-9-1.588-9S24.933,4.569,21.651,1.712c-3.282-2.861-7.06-1.272-7.06-1.272C7.693,4.897,0.542,8.772,0.113,27.408
+		C0.097,44.856,13.342,62.852,27.665,76.784c14.346,15.734,34.043,31.504,53.086,31.486c18.634-0.425,22.508-7.575,26.965-14.473
+		c0,0,1.59-3.775-1.268-7.06c-2.86-3.284-17.265-17.688-17.265-17.688s-4.268-5.119-8.998-1.586
+		c-3.525,2.635-9.855,8.496-11.38,9.917C68.808,77.385,58.219,71.74,51.954,66.588z" />
+                  </g>
+                </svg>
+                Обратный звонок
+              </a></li>
+            <li>
+              <a href="mailto:info@lenoma.ru?subject=Письмо с сайта Lenoma.ru&amp;body=Здравствуйте, Lenoma.ru!">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382.117 382.117" style="enable-background:new 0 0 382.117 382.117;" xml:space="preserve" width="10" height="10">
+                  <path d="M336.764,45.945H45.354C20.346,45.945,0,65.484,0,89.5v203.117c0,24.016,20.346,43.555,45.354,43.555h291.41
+	c25.008,0,45.353-19.539,45.353-43.555V89.5C382.117,65.484,361.772,45.945,336.764,45.945z M336.764,297.72H45.354
+	c-3.676,0-6.9-2.384-6.9-5.103V116.359l131.797,111.27c2.702,2.282,6.138,3.538,9.676,3.538l22.259,0.001
+	c3.536,0,6.974-1.257,9.677-3.539l131.803-111.274v176.264C343.664,295.336,340.439,297.72,336.764,297.72z M191.059,192.987
+	L62.87,84.397h256.378L191.059,192.987z" />
+                </svg>
+                info@lenoma.ru
+              </a>
+            </li>
+            <li>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 97.16 97.16" style="enable-background:new 0 0 97.16 97.16;" xml:space="preserve" width="10" height="10">
+                <g>
+                  <g>
+                    <path d="M48.58,0C21.793,0,0,21.793,0,48.58s21.793,48.58,48.58,48.58s48.58-21.793,48.58-48.58S75.367,0,48.58,0z M48.58,86.823
+			c-21.087,0-38.244-17.155-38.244-38.243S27.493,10.337,48.58,10.337S86.824,27.492,86.824,48.58S69.667,86.823,48.58,86.823z" />
+                    <path d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832
+			c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
+                  </g>
+                </g>
+              </svg>
+              пн-пт 9.00 - 21.00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="categories categories--closed">
+        <button class="categories__toggle">
+          <svg height="34" width="30" viewBox="0 -52 512.00001 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="m0 113.292969h113.292969v-113.292969h-113.292969zm30.003906-83.289063h53.289063v53.289063h-53.289063zm0 0" />
+            <path d="m149.296875 0v113.292969h362.703125v-113.292969zm332.699219 83.292969h-302.695313v-53.289063h302.695313zm0 0" />
+            <path d="m0 260.300781h113.292969v-113.292969h-113.292969zm30.003906-83.292969h53.289063v53.289063h-53.289063zm0 0" />
+            <path d="m149.296875 260.300781h362.703125v-113.292969h-362.703125zm30.003906-83.292969h302.695313v53.289063h-302.695313zm0 0" />
+            <path d="m0 407.308594h113.292969v-113.296875h-113.292969zm30.003906-83.292969h53.289063v53.289063h-53.289063zm0 0" />
+            <path d="m149.296875 407.308594h362.703125v-113.296875h-362.703125zm30.003906-83.292969h302.695313v53.289063h-302.695313zm0 0" /></svg>
+          Каталог
+        </button>
+        <ul class="categories__list">
+          <li class="categories__item">
+            <a href="#">Акция</a>
+          </li>
+          <li class="categories__item">
+            <a href="#">Парфюмерия</a>
+          </li>
+          <li class="categories__item">
+            <a href="#">Новинки</a>
+          </li>
+          <li class="categories__item">
+            <a href="#">Макияж</a>
+          </li>
+          <li class="categories__item">
+            <a href="#">Уход за кожей</a>
+          </li>
+          <li class="categories__item">
+            <a href="#">Уход за волосами</a>
+          </li>
+          <li class="categories__item categories__item--man">
+            <a href="#">Для мужчин</a>
+            <ul>
+              <li>
+                <a href="#">Мужские ароматы</a>
+              </li>
+              <li>
+                <a href="#">Дезодоранты</a>
+              </li>
+              <li>
+                <a href="#">Гели для душа</a>
+              </li>
+              <li>
+                <a href="#">Шампуни и кондиционеры</a>
+              </li>
+            </ul>
+          </li>
+          <li class="categories__item">
+            <a href="#">Organic</a>
+          </li>
+          <li class="categories__item">
+            <a href="#">Подарки</a>
+          </li>
+          <li class="categories__item categories__item--sale">
+            <a href="#">Sale</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="promo">
+      <div class="container">
+        <div class="promo__wrapper">
+          <h2 class="promo__caption">Идеальный аромат от Giorgio Armani</h2>
+          <div class="promo__advice">
+            <h3 class="promo__title">Наши рекомендации</h3>
+            <ul class="promo__list">
+              <li class="promo__item">
+                <a href="#">Интересные предложения</a>
+              </li>
+              <li class="promo__item">
+                <a href="#">Женская парфюмерия</a>
+              </li>
+              <li class="promo__item">
+                <a href="#">Товар со скидками</a>
+              </li>
+            </ul>
+          </div>
+          <img class="promo__pic" src="./img/ga.png" width="65" height="145" alt="Giorgio Armani Gold">
+          <p class="promo__price">от 4 990 Р.-</p>
+          <a href="#" class="promo__link">Подробнее</a>
+          <div class="promo__controls">
+            <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
+            <input class="visually-hidden" type="radio" id="product-2" name="toggle">
+            <input class="visually-hidden" type="radio" id="product-3" name="toggle">
+            <label class="promo__label" for="product-1">Первый</label>
+            <label class="promo__label" for="product-2">Второй</label>
+            <label class="promo__label" for="product-3">Третий</label>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features">
+     <h2 class="visually-hidden">Преимущества</h2>
+      <div class="container">
+        <ul class="features__list">
+          <li class="features__item">Оригинальная продукция</li>
+          <li class="features__item">Бесплатная доставка по Москве и России</li>
+          <li class="features__item">Система скидок</li>
+          <li class="features__item">Срочная доставка</li>
+        </ul>
+      </div>
+    </section>
+    <section class="goods">
+      <div class="container">
+        <h2 class="title">Хиты продаж</h2>
+        <ul class="goods__list single-item">
+          <li class="goods__item goods__item--sale">
+            <img class="goods__pic" src="./img/narc.png" width="200" height="198" alt="">
+            <h3 class="goods__label">FLEUR NARCOTIQUE</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost goods__cost--old">8 990 Р.</p>
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/love.png" width="200" height="198" alt="">
+            <h3 class="goods__label">100% LOVE</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 2 390 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/10corso.png" width="200" height="198" alt="">
+            <h3 class="goods__label">10 Corso Como</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 7 890 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/1881.png" width="200" height="198" alt="">
+            <h3 class="goods__label">1881 Collection</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 3 270 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item goods__item--sale">
+            <img class="goods__pic" src="./img/narc.png" width="200" height="198" alt="">
+            <h3 class="goods__label">FLEUR NARCOTIQUE</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost goods__cost--old">8 990 Р.</p>
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="title">Новинки</h2>
+        <ul class="goods__list single-item">
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/aigner_black.png" width="200" height="198" alt="">
+            <h3 class="goods__label">Aigner Black</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/aigner.png" width="200" height="198" alt="">
+            <h3 class="goods__label">Aigner Black Icedrops</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 2 390 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/fleur.png" width="200" height="198" alt="">
+            <h3 class="goods__label">Fleur Narcotique</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 7 890 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/aire.png" width="200" height="198" alt="">
+            <h3 class="goods__label">Aire Loco</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 3 270 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item goods__item--sale">
+            <img class="goods__pic" src="./img/narc.png" width="200" height="198" alt="">
+            <h3 class="goods__label">FLEUR NARCOTIQUE</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost goods__cost--old">8 990 Р.</p>
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="title">Специальные предложения</h2>
+        <ul class="goods__list single-item">
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/8always.png" width="200" height="198" alt="">
+            <h3 class="goods__label">8 Always Pretty</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/fandi.png" width="200" height="198" alt="">
+            <h3 class="goods__label">Fan Di Fendi Extreme</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 2 390 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/tease.png" width="200" height="198" alt="">
+            <h3 class="goods__label">Tease Limited Edition Eau De Parfum</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 3 910 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item">
+            <img class="goods__pic" src="./img/001.png" width="200" height="198" alt="">
+            <h3 class="goods__label">001</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+          <li class="goods__item goods__item--sale">
+            <img class="goods__pic" src="./img/narc.png" width="200" height="198" alt="">
+            <h3 class="goods__label">FLEUR NARCOTIQUE</h3>
+            <p class="goods__info">EX Nihilo</p>
+            <p class="goods__info">Парфюмированная вода</p>
+            <p class="goods__info">Женская</p>
+            <div class="goods__price">
+              <p class="goods__cost goods__cost--old">8 990 Р.</p>
+              <p class="goods__cost">от 4 990 Р.-</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="brands">
+      <div class="container">
+        <h2 class="title">Топ брендов</h2>
+        <h3 class="subtitle">Все бренды</h3>
+        <ul class="brands__list">
+          <li class="brands__item">
+            <img src="./img/dg.png" alt="">
+          </li>
+          <li class="brands__item">
+            <img src="./img/ck.png" alt="">
+          </li>
+          <li class="brands__item">
+            <img src="./img/bvlgari.png" alt="">
+          </li>
+          <li class="brands__item">
+            <img src="./img/dior.png" alt="">
+          </li>
+          <li class="brands__item">
+            <img src="./img/yves.png" alt="">
+          </li>
+          <li class="brands__item">
+            <img src="./img/burberry.png" alt="">
+          </li>
+        </ul>
+        <div class="brands__wrapper single-item">
+          <ul class="brands__roster">
+            <li class="brands__el">Azzaro</li>
+            <li class="brands__el">Burberry</li>
+            <li class="brands__el">Bvlgari</li>
+            <li class="brands__el">Calvin Klein</li>
+            <li class="brands__el">Carolina Herrera</li>
+            <li class="brands__el">Cartier</li>
+          </ul>
+          <ul class="brands__roster">
+            <li class="brands__el">Paco Rabanne</li>
+            <li class="brands__el">Parfums De Coeur</li>
+            <li class="brands__el">Ralph Lauren</li>
+            <li class="brands__el">Thierry Mugler</li>
+            <li class="brands__el">Versace</li>
+            <li class="brands__el">Yves Saint Laurent</li>
+          </ul>
+          <ul class="brands__roster">
+            <li class="brands__el">Christian Dior</li>
+            <li class="brands__el">Dana</li>
+            <li class="brands__el">Davidoff</li>
+            <li class="brands__el">Dolce & Gabanna</li>
+            <li class="brands__el">Elizabeth Arden</li>
+            <li class="brands__el">Estee Lauder</li>
+          </ul>
+          <ul class="brands__roster">
+            <li class="brands__el">Ivanka Trump</li>
+            <li class="brands__el">Jean Paul Gaultier</li>
+            <li class="brands__el">Juicy Couture</li>
+            <li class="brands__el">Lancome</li>
+            <li class="brands__el">Liz Claiborne</li>
+            <li class="brands__el">Mont Blanc</li>
+          </ul>
+          <ul class="brands__roster">
+            <li class="brands__el">Giorgio Armani</li>
+            <li class="brands__el">Givenchy</li>
+            <li class="brands__el">Gucci</li>
+            <li class="brands__el">Guerlain</li>
+            <li class="brands__el">Hugo Boss</li>
+            <li class="brands__el">Issey Miyake</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="articles">
+      <div class="container">
+        <h2 class="title">Статьи и новости</h2>
+        <div class="articles__inner">
+          <div class="articles__column">
+            <article class="articles__item">
+              <h3 class="articles__title">Парфюмерия в нашей жизни</h3>
+              <time class="articles__date"  datetime="2017-04-26">26 апреля 2017</time>
+              <p class="articles__text">Как ароматы могут влиять на ваше настроение, самочувствие, деловые отношения и любовные завоевания? Все секреты магической силы различных парфюмов, вы, сможете открыть для себя, прочитав эту статью!</p>
+            </article>
+            <article class="articles__item">
+              <h3 class="articles__title">Топ женских ароматов - Весна 2016</h3>
+              <time class="articles__date"  datetime="2017-04-26">26 апреля 2017</time>
+              <p class="articles__text">Как ароматы могут влиять на ваше настроение, самочувствие, деловые отношения и любовные завоевания? Все секреты магической силы различных парфюмов, вы, сможете открыть для себя, прочитав эту статью!</p>
+            </article>
+            <article class="articles__item">
+              <h3 class="articles__title">Победители парфюмерных премий Art and Olfaction Awards 2014 и Canadian Fragrance Awards 2014</h3>
+              <time class="articles__date"  datetime="2017-04-26">26 апреля 2017</time>
+              <p class="articles__text">В Канаде прошло награждения победителей девятой ежегодной премии ароматов «Canadian Fragrance Awards 2014».</p>
+            </article>
+            <a class="articles__link" href="">Смотреть все статьи</a>
+          </div>
+
+          <div class="articles__column">
+            <article class="articles__item articles__item--pictured articles__item--parfumers">
+              <h3 class="articles__title">Geza Shoen, Mark Buxton и Bertrand Duchaufour</h3>
+              <time class="articles__date"  datetime="2017-04-26">26 апреля 2017</time>
+              <p class="articles__text">Три поистине великих парфюмера, объединили свои общие труды и выпустили коллекцию под названием Renegades.</p>
+            </article>
+            <article class="articles__item articles__item--pictured articles__item--korloff">
+              <h3 class="articles__title">Geza Shoen, Mark Buxton и Bertrand Duchaufour</h3>
+              <time class="articles__date"  datetime="2017-04-26">26 апреля 2017</time>
+              <p class="articles__text">Мужской аромат, выпущенный в 2016 году, воплощает силу и овтагу</p>
+            </article>
+            <article class="articles__item articles__item--pictured articles__item--creed">
+              <h3 class="articles__title">Новый аромат представляет собой</h3>
+              <time class="articles__date"  datetime="2017-04-26">26 апреля 2017</time>
+              <p class="articles__text">Новинка 2016 года для мужчин от торгового дома Amouage - Bracken for Men обладателя</p>
+            </article>
+            <a class="articles__link" href="">Смотреть все новости</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__menu">
+        <div>
+          <h3 class="footer__title">О компании</h3>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#">О магазине</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Новости</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Статьи</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Информация о заказах</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__title">Каталог</h3>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#">Женская парфюмерия</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Мужская парфюмерия</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Новинки</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Средства ухода</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Селективная косметика</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Духи для дома</a>
+            </li>
+            <li class="footer__item">
+              <a href="#">Винтаж</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__title">+7 /495/ 542-05-95</h3>
+          <ul class="footer__list">
+            <li class="footer__item">
+              Мы доступны также
+              <svg class="icon-vb" viewBox="0 0 52.511 52.511" style="enable-background:new 0 0 52.511 52.511;" width="20" height="20">
+                <g>
+                  <g>
+                    <path d="M31.256,0H21.254C10.778,0,2.255,8.521,2.255,18.995v9.01c0,7.8,4.793,14.81,12,17.665v5.841
+			c0,0.396,0.233,0.754,0.595,0.914c0.13,0.058,0.268,0.086,0.405,0.086c0.243,0,0.484-0.089,0.671-0.259L21.725,47h9.531
+			c10.476,0,18.999-8.521,18.999-18.995v-9.01C50.255,8.521,41.732,0,31.256,0z M48.255,28.005C48.255,37.376,40.63,45,31.256,45
+			h-9.917c-0.248,0-0.487,0.092-0.671,0.259l-4.413,3.997v-4.279c0-0.424-0.267-0.802-0.667-0.942
+			C8.81,41.638,4.255,35.196,4.255,28.005v-9.01C4.255,9.624,11.881,2,21.254,2h10.002c9.374,0,16.999,7.624,16.999,16.995V28.005z" />
+                    <path d="M39.471,30.493l-6.146-3.992c-0.672-0.437-1.472-0.585-2.255-0.423c-0.784,0.165-1.458,0.628-1.895,1.303l-0.289,0.444
+			c-2.66-0.879-5.593-2.002-7.349-7.085l0.727-0.632h0c1.248-1.085,1.379-2.983,0.294-4.233l-4.808-5.531
+			c-0.362-0.417-0.994-0.46-1.411-0.099l-3.019,2.624c-2.648,2.302-1.411,5.707-1.004,6.826c0.018,0.05,0.04,0.098,0.066,0.145
+			c0.105,0.188,2.612,4.662,6.661,8.786c4.065,4.141,11.404,7.965,11.629,8.076c0.838,0.544,1.781,0.805,2.714,0.805
+			c1.638,0,3.244-0.803,4.202-2.275l2.178-3.354C40.066,31.413,39.934,30.794,39.471,30.493z M35.91,34.142
+			c-0.901,1.388-2.763,1.782-4.233,0.834c-0.073-0.038-7.364-3.835-11.207-7.75c-3.592-3.659-5.977-7.724-6.302-8.291
+			c-0.792-2.221-0.652-3.586,0.464-4.556l2.265-1.968l4.152,4.776c0.369,0.424,0.326,1.044-0.096,1.411l-1.227,1.066
+			c-0.299,0.26-0.417,0.671-0.3,1.049c2.092,6.798,6.16,8.133,9.13,9.108l0.433,0.143c0.433,0.146,0.907-0.021,1.155-0.403
+			l0.709-1.092c0.146-0.226,0.37-0.379,0.63-0.434c0.261-0.056,0.527-0.004,0.753,0.143l5.308,3.447L35.91,34.142z" />
+                    <path d="M28.538,16.247c-0.532-0.153-1.085,0.156-1.236,0.688c-0.151,0.531,0.157,1.084,0.688,1.235
+			c1.49,0.424,2.677,1.613,3.097,3.104c0.124,0.44,0.525,0.729,0.962,0.729c0.09,0,0.181-0.012,0.272-0.037
+			c0.531-0.15,0.841-0.702,0.691-1.234C32.405,18.578,30.69,16.859,28.538,16.247z" />
+                    <path d="M36.148,22.219c0.09,0,0.181-0.012,0.272-0.037c0.532-0.15,0.841-0.703,0.691-1.234c-1.18-4.183-4.509-7.519-8.689-8.709
+			c-0.531-0.153-1.084,0.158-1.235,0.689c-0.151,0.531,0.157,1.084,0.688,1.235c3.517,1,6.318,3.809,7.311,7.328
+			C35.311,21.931,35.711,22.219,36.148,22.219z" />
+                    <path d="M27.991,7.582c-0.532-0.153-1.085,0.156-1.236,0.689c-0.151,0.531,0.157,1.084,0.688,1.235
+			c5.959,1.695,10.706,6.453,12.388,12.416c0.124,0.44,0.525,0.729,0.962,0.729c0.09,0,0.181-0.012,0.272-0.037
+			c0.531-0.15,0.841-0.703,0.691-1.234C39.887,14.753,34.613,9.467,27.991,7.582z" />
+                  </g>
+                </g>
+              </svg>
+              <svg class="icon-wp" viewBox="0 0 512 512" width="20" height="20">
+                <path d="m439.277344 72.722656c-46.898438-46.898437-109.238282-72.722656-175.566406-72.722656-.003907 0-.019532 0-.023438 0-32.804688.00390625-64.773438 6.355469-95.011719 18.882812-30.242187 12.527344-57.335937 30.640626-80.535156 53.839844-46.894531 46.894532-72.71875 109.246094-72.71875 175.566406 0 39.550782 9.542969 78.855469 27.625 113.875l-41.734375 119.226563c-2.941406 8.410156-.859375 17.550781 5.445312 23.851563 4.410157 4.414062 10.214844 6.757812 16.183594 6.757812 2.558594 0 5.144532-.429688 7.667969-1.3125l119.226563-41.730469c35.019531 18.082031 74.324218 27.625 113.875 27.625 66.320312 0 128.667968-25.828125 175.566406-72.722656 46.894531-46.894531 72.722656-109.246094 72.722656-175.566406 0-66.324219-25.824219-128.675781-72.722656-175.570313zm-21.234375 329.902344c-41.222657 41.226562-96.035157 63.925781-154.332031 63.925781-35.664063 0-71.09375-8.820312-102.460938-25.515625-5.6875-3.023437-12.410156-3.542968-18.445312-1.429687l-108.320313 37.910156 37.914063-108.320313c2.113281-6.042968 1.589843-12.765624-1.433594-18.449218-16.691406-31.359375-25.515625-66.789063-25.515625-102.457032 0-58.296874 22.703125-113.109374 63.925781-154.332031 41.21875-41.21875 96.023438-63.921875 154.316406-63.929687h.019532c58.300781 0 113.109374 22.703125 154.332031 63.929687 41.226562 41.222657 63.929687 96.03125 63.929687 154.332031 0 58.300782-22.703125 113.113282-63.929687 154.335938zm0 0" />
+                <path d="m355.984375 270.46875c-11.421875-11.421875-30.007813-11.421875-41.429687 0l-12.492188 12.492188c-31.019531-16.902344-56.121094-42.003907-73.027344-73.023438l12.492188-12.492188c11.425781-11.421874 11.425781-30.007812 0-41.429687l-33.664063-33.664063c-11.421875-11.421874-30.007812-11.421874-41.429687 0l-26.929688 26.929688c-15.425781 15.425781-16.195312 41.945312-2.167968 74.675781 12.179687 28.417969 34.46875 59.652344 62.761718 87.945313 28.292969 28.292968 59.527344 50.582031 87.945313 62.761718 15.550781 6.664063 29.695312 9.988282 41.917969 9.988282 13.503906 0 24.660156-4.058594 32.757812-12.15625l26.929688-26.933594v.003906c5.535156-5.535156 8.582031-12.890625 8.582031-20.714844 0-7.828124-3.046875-15.183593-8.582031-20.714843zm-14.5 80.792969c-4.402344 4.402343-17.941406 5.945312-41.609375-4.195313-24.992188-10.710937-52.886719-30.742187-78.542969-56.398437s-45.683593-53.546875-56.394531-78.539063c-10.144531-23.667968-8.601562-37.210937-4.199219-41.613281l26.414063-26.414063 32.625 32.628907-15.636719 15.640625c-7.070313 7.070312-8.777344 17.792968-4.242187 26.683594 20.558593 40.3125 52.734374 72.488281 93.046874 93.046874 8.894532 4.535157 19.617188 2.832032 26.6875-4.242187l15.636719-15.636719 32.628907 32.628906zm0 0" /></svg>
+            </li>
+            <li class="footer__item">
+              В рабочее время с 9.00 до 21.00
+            </li>
+            <li class="footer__item footer__item--bold">
+              <a href="#">
+                <svg viewBox="0 0 108.27 108.27" xml:space="preserve" width="10" height="10">
+                  <g>
+                    <path d="M51.954,66.588c-9.284-7.634-15.483-17.054-18.742-22.414l-2.431-4.583c0.85-0.912,7.332-7.853,10.141-11.619
+		c3.53-4.729-1.588-9-1.588-9S24.933,4.569,21.651,1.712c-3.282-2.861-7.06-1.272-7.06-1.272C7.693,4.897,0.542,8.772,0.113,27.408
+		C0.097,44.856,13.342,62.852,27.665,76.784c14.346,15.734,34.043,31.504,53.086,31.486c18.634-0.425,22.508-7.575,26.965-14.473
+		c0,0,1.59-3.775-1.268-7.06c-2.86-3.284-17.265-17.688-17.265-17.688s-4.268-5.119-8.998-1.586
+		c-3.525,2.635-9.855,8.496-11.38,9.917C68.808,77.385,58.219,71.74,51.954,66.588z" />
+                  </g>
+                </svg>
+                ОБРАТНЫЙ ЗВОНОК
+              </a>
+            </li>
+            <li class="footer__item footer__item--bold">
+              <a href="mailto:info@lenoma.ru?subject=Письмо с сайта Lenoma.ru&amp;body=Здравствуйте, Lenoma.ru!">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 382.117 382.117" style="enable-background:new 0 0 382.117 382.117;" xml:space="preserve" width="10" height="10">
+                  <path d="M336.764,45.945H45.354C20.346,45.945,0,65.484,0,89.5v203.117c0,24.016,20.346,43.555,45.354,43.555h291.41
+	c25.008,0,45.353-19.539,45.353-43.555V89.5C382.117,65.484,361.772,45.945,336.764,45.945z M336.764,297.72H45.354
+	c-3.676,0-6.9-2.384-6.9-5.103V116.359l131.797,111.27c2.702,2.282,6.138,3.538,9.676,3.538l22.259,0.001
+	c3.536,0,6.974-1.257,9.677-3.539l131.803-111.274v176.264C343.664,295.336,340.439,297.72,336.764,297.72z M191.059,192.987
+	L62.87,84.397h256.378L191.059,192.987z" />
+                </svg>
+                INFO@LENOMA.RU
+              </a></li>
+            <li class="footer__item footer__item--bold">
+              <a href="#">
+                <svg width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                  <path style="fill:#03A9F4;" d="M502.912,258.656c0-132.96-109.312-240.768-244.192-240.768c-14.208,0-28.16,1.216-41.76,3.52
+	C195.136,7.872,169.312,0,141.632,0C63.392,0,0,62.496,0,139.648c0,25.76,7.104,49.856,19.456,70.624
+	c-3.232,15.616-4.96,31.84-4.96,48.384c0,132.992,109.344,240.8,244.192,240.8c15.296,0,30.208-1.408,44.736-4.032
+	C323.392,505.984,346.144,512,370.4,512c78.208,0,141.6-62.528,141.6-139.616c0-22.272-5.312-43.328-14.72-62.016
+	C500.992,293.664,502.912,276.416,502.912,258.656z" />
+                  <path style="fill:#FAFAFA;" d="M383.968,373.728c-11.296,15.776-27.968,28.256-49.632,37.088
+	c-21.408,8.768-47.04,13.28-76.288,13.28c-35.072,0-64.48-6.08-87.456-18.112c-16.416-8.736-29.92-20.544-40.192-35.2
+	c-10.4-14.72-15.616-29.344-15.616-43.52c0-8.768,3.424-16.448,10.176-22.688c6.688-6.24,15.264-9.344,25.504-9.344
+	c8.384,0,15.616,2.464,21.504,7.36c5.6,4.736,10.432,11.712,14.304,20.64c4.32,9.792,9.024,18.048,13.984,24.48
+	c4.832,6.304,11.712,11.552,20.512,15.68c8.864,4.096,20.8,6.24,35.456,6.24c20.192,0,36.768-4.288,49.184-12.64
+	c12.192-8.16,18.08-18.016,18.08-30.048c0-9.472-3.104-16.96-9.408-22.816c-6.656-6.144-15.424-10.912-26.048-14.208
+	c-11.104-3.392-26.176-7.104-44.8-10.944c-25.376-5.344-46.912-11.648-64-18.88c-17.504-7.36-31.648-17.536-41.952-30.24
+	c-10.496-12.992-15.808-29.216-15.808-48.288c0-18.176,5.568-34.56,16.576-48.704c10.912-14.048,26.848-25.024,47.424-32.48
+	c20.256-7.392,44.352-11.104,71.648-11.104c21.792,0,40.96,2.496,56.992,7.424c16.096,4.928,29.664,11.584,40.32,19.808
+	c10.752,8.32,18.752,17.12,23.744,26.336c5.056,9.28,7.648,18.528,7.648,27.456c0,8.608-3.36,16.448-10.016,23.232
+	c-6.72,6.848-15.168,10.304-25.088,10.304c-9.024,0-16.128-2.208-21.024-6.464c-4.576-4-9.344-10.24-14.592-19.136
+	c-6.08-11.392-13.472-20.384-21.92-26.752c-8.224-6.176-21.92-9.248-40.8-9.248c-17.472,0-31.744,3.456-42.304,10.304
+	c-10.176,6.56-15.136,14.112-15.136,23.072c0,5.472,1.6,10.048,4.896,13.984c3.456,4.224,8.352,7.84,14.56,10.912
+	c6.4,3.168,13.024,5.728,19.648,7.52c6.784,1.856,18.144,4.64,33.792,8.192c19.776,4.16,37.92,8.864,53.984,13.952
+	c16.288,5.088,30.304,11.392,41.824,18.784c11.68,7.52,20.928,17.12,27.52,28.64c6.592,11.616,9.92,25.856,9.92,42.432
+	C401.056,339.84,395.296,357.92,383.968,373.728z" />
+                </svg>
+                SKYPE: LENOMA.RU
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__subscribe">
+            <h3 class="footer__title">Подписаться на новости</h3>
+            <input class="footer__input" type="email" placeholder="Введите EMAIL">
+            <input class="footer__submit" type="submit" value="Подписаться">
+          </div>
+          <div>
+            <a class="footer__link" href="#">
+              <div class="icon-inst"></div>
+              Присоединяйтесь к нам
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copywrite">
+        <p class="footer__year">&copy; 2017. Lenoma.ru</p>
+        <p class="footer__developer">
+          <svg height="20" viewBox="-56 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="m77.78125 170.320312c5.246094 1.734376 10.902344-1.109374 12.632812-6.355468 15.699219-47.480469 59.867188-79.378906 109.910157-79.378906 63.816406 0 115.738281 51.917968 115.738281 115.738281 0 49.324219-22.09375 78.792969-39.84375 102.472656-12.914062 17.222656-24.066406 32.101563-24.066406 50.144531 0 1.1875-.015625 2.363282-.042969 3.53125h-41.785156v-22.972656c0-5.523438-4.476563-10-10-10-5.523438 0-10 4.476562-10 10v22.972656h-41.789063c-.027344-1.167968-.042968-2.34375-.042968-3.53125 0-18.046875-11.152344-32.921875-24.066407-50.148437-13.074219-17.441407-27.890625-37.210938-35.238281-65.300781-1.398438-5.34375-6.867188-8.542969-12.207031-7.144532-5.339844 1.394532-8.539063 6.863282-7.140625 12.203125 8.339844 31.886719 25.109375 54.261719 38.585937 72.238281 11.210938 14.957032 20.066407 26.769532 20.066407 38.152344 0 4.789063.203124 9.460938.597656 13.917969v84.585937c0 .269532.019531.53125.039062.792969.007813.0625.003906.128907.011719.191407.035156.371093.09375.730468.167969 1.089843v.007813c3.472656 16.289062 12.363281 31.101562 25.042968 41.707031 12.921876 10.8125 29.25 16.765625 45.972657 16.765625 16.722656 0 33.046875-5.953125 45.972656-16.765625 12.675781-10.605469 21.570313-25.417969 25.039063-41.707031 0-.003906.003906-.007813.003906-.011719.074218-.355469.128906-.714844.167968-1.085937.003907-.0625.003907-.128907.007813-.191407.019531-.265625.039063-.527343.039063-.796875v-84.582031c.394531-4.457031.601562-9.128906.601562-13.917969 0-11.382812 8.855469-23.195312 20.066406-38.152344 18.5-24.679687 43.839844-58.476562 43.839844-114.464843 0-74.847657-60.894531-135.738281-135.738281-135.738281-58.6875 0-110.484375 37.414062-128.898438 93.101562-1.734375 5.242188 1.113281 10.898438 6.355469 12.632812zm122.542969 321.679688c-20.332031 0-38.667969-12.296875-47.355469-30.558594h94.710938c-8.691407 18.261719-27.027344 30.558594-47.355469 30.558594zm51.234375-50.558594h-102.46875v-22.484375h102.46875zm0-42.484375h-102.46875v-22.484375h102.46875zm0 0" />
+              <path d="m200.324219 46.644531c5.523437 0 10-4.476562 10-10v-26.644531c0-5.523438-4.476563-10-10-10-5.523438 0-10 4.476562-10 10v26.644531c0 5.523438 4.476562 10 10 10zm0 0" />
+              <path d="m10 210.324219h26.644531c5.523438 0 10-4.476563 10-10 0-5.523438-4.476562-10-10-10h-26.644531c-5.523438 0-10 4.476562-10 10 0 5.523437 4.476562 10 10 10zm0 0" />
+              <path d="m246.109375 220.527344c0-5.523438-4.476563-10-10-10h-71.570313c-5.523437 0-10 4.476562-10 10 0 5.523437 4.476563 10 10 10h25.785157v22.972656c0 5.523438 4.476562 10 10 10 5.523437 0 10-4.476562 10-10v-22.972656h25.785156c5.523437 0 10-4.476563 10-10zm0 0" />
+              <path d="m77.515625 91.65625c1.953125 1.953125 4.511719 2.929688 7.070313 2.929688 2.558593 0 5.117187-.976563 7.070312-2.929688 3.90625-3.90625 3.90625-10.238281 0-14.140625l-18.839844-18.839844c-3.90625-3.90625-10.238281-3.90625-14.144531 0-3.902344 3.902344-3.902344 10.234375 0 14.140625zm0 0" />
+              <path d="m58.847656 351.800781c2.558594 0 5.117188-.976562 7.070313-2.929687l18.839843-18.839844c3.90625-3.90625 3.90625-10.234375 0-14.140625s-10.238281-3.90625-14.140624 0l-18.84375 18.839844c-3.902344 3.90625-3.902344 10.238281 0 14.140625 1.953124 1.953125 4.511718 2.929687 7.074218 2.929687zm0 0" />
+              <path d="m316.0625 94.585938c2.558594 0 5.117188-.976563 7.070312-2.929688l18.839844-18.839844c3.90625-3.90625 3.90625-10.238281 0-14.144531-3.902344-3.90625-10.234375-3.902344-14.140625 0l-18.839843 18.839844c-3.90625 3.90625-3.90625 10.238281-.003907 14.144531 1.953125 1.953125 4.515625 2.929688 7.074219 2.929688zm0 0" />
+              <path d="m315.890625 315.890625c-3.90625 3.902344-3.90625 10.234375 0 14.140625l18.839844 18.839844c1.953125 1.953125 4.511719 2.929687 7.070312 2.929687 2.558594 0 5.117188-.976562 7.070313-2.929687 3.90625-3.902344 3.90625-10.234375 0-14.140625l-18.839844-18.839844c-3.90625-3.90625-10.238281-3.90625-14.140625 0zm0 0" />
+              <path d="m364.003906 210.324219h26.644532c5.523437 0 10-4.476563 10-10 0-5.523438-4.476563-10-10-10h-26.644532c-5.523437 0-10 4.476562-10 10 0 5.523437 4.476563 10 10 10zm0 0" />
+              <path d="m200.324219 283.5c-5.507813 0-10 4.492188-10 10s4.492187 10 10 10c5.507812 0 10-4.492188 10-10s-4.492188-10-10-10zm0 0" />
+              <path d="m84.585938 200.324219c0-5.507813-4.492188-10-10-10-5.511719 0-10 4.492187-10 10 0 5.507812 4.488281 10 10 10 5.507812 0 10-4.492188 10-10zm0 0" />
+            </g>
+          </svg>
+          Разработка и поддержка — «ЭВРИКА»</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+
+</html>
